@@ -1,16 +1,22 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdarg.h>
 
 void print_buffer(char buffer[], int *buff_ind);
 
 /**
  * _printf - Printf function
- * @format: format.
+ * @format: symols used
+ * @get_width: helper fuction
+ * @get_precision:helper function
+ * @get_size:helper function
+ * @handle_print:helper function
  * Return: Printed chars.
  */
 int _printf(const char *format, ...)
 {
-
+	int print_char(va_list types, char buffer[],
+        int flags, int width, int precision, int size);
 	int i, printed = 0, printed_chars = 0;
 	int flags, width, precision, size, buff_ind = 0;
 	va_list list;
