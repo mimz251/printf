@@ -1,18 +1,26 @@
 #include "main.h"
 /**
- * handle_print - this prints an argument based on its type
- * @fmt: formats string in which to print the arguments
- * @list: List of arguments to be printed
- * @ind: ind
- * @buffer: Buffer array to handle print
+ * handle_print - Prints an argument based on its type
+ * @fmt: Formatted string in which to print the arguments.
+ * @list: List of arguments to be printed.
+ * @ind: ind.
+ * @buffer: Buffer array to handle print.
  * @flags: Calculates active flags
- * @width: width
+ * @width: get width.
  * @precision: Precision specification
  * @size: Size specifier
  * Return: 1 or 2;
+ * @print_octal:prints in decimal and octal format
+ * @print_reverse:reverses arrays
+ * @print_hexadecimal:prints hexadecimals
+ * @print_unsigned:prints unsigned int
+ * @print_hexupper:prints converted int
+ * @print_pointer:prints the value
+ * @print_rot13string:prints the new value
+ * @print_non_printable:prints the format
  */
 int handle_print(const char *fmt, int *ind, va_list list, char buffer[],
-	int flags, int width, int precision, int size)
+		int flags, int width, int precision, int size)
 {
 	int i, unknow_len = 0, printed_chars = -1;
 	fmt_t fmt_types[] = {

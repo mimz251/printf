@@ -1,13 +1,13 @@
 #include "main.h"
-#include <stdarg.h>
+
+void print_buffer(char buffer[], int *buff_ind);
+
 /**
  * _printf - Printf function
  * @format: format.
  * Return: Printed chars.
  */
-void print_buffer(char buffer[], int *buff_ind);
-int _printf(const char *format, ...);
-
+int _printf(const char *format, ...)
 {
 	int i, printed = 0, printed_chars = 0;
 	int flags, width, precision, size, buff_ind = 0;
@@ -50,7 +50,7 @@ int _printf(const char *format, ...);
 	va_end(list);
 
 	return (printed_chars);
-
+}
 
 /**
  * print_buffer - Prints the contents of the buffer if it exist
@@ -64,4 +64,4 @@ void print_buffer(char buffer[], int *buff_ind)
 
 	*buff_ind = 0;
 }
-}
+
