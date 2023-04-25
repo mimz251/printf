@@ -13,6 +13,8 @@
 #define F_ZERO 4
 #define F_HASH 8
 #define F_SPACE 16
+#define LEFT_JUSTIFY 1
+#define ZERO_PAD 2
 
 /* SIZES */
 #define S_LONG 2
@@ -39,9 +41,9 @@ struct fmt
  */
 typedef struct fmt fmt_t;
 
-int _printf(const char *format, ...);
-int handle_print(const char *fmt, int *i,
-va_list list, char buffer[], int flags, int width, int precision, int size);
+int _printf(const char *format, ...); 
+int handle_print(const char *fmt, int *ind, va_list list, char buffer[],
+int flags, int width, int precision, int size);
 void print_buffer(char buffer[], int *buff_ind);
 /* FUNCTIONS */
 
@@ -113,6 +115,13 @@ int is_digit(char);
 
 long int convert_size_number(long int num, int size);
 long int convert_size_unsgnd(unsigned long int num, int size);
-
+/*other functions*/
+int print_unsigned(va_list list, char buffer[], int flags, int width, int precision, int size);
+int print_octal(va_list list, char buffer[], int flags, int width, int precision, int size);
+int print_hexadecimal(va_list list, char buffer[], int flags, int width, int precision, int size);
+int print_hexa_upper(va_list list, char buffer[], int flags, int width, int precision, int size);
+int print_pointer(va_list list, char buffer[], int flags, int width, int precision, int size);
+int print_non_printable(va_list list, char buffer[], int flags, int width, int precision, int size);
+int print_reverse(va_list list, char buffer[], int flags, int width, int precision, int size);
+int print_rot13string(va_list list, char buffer[], int flags, int width, int precision, int size);
 #endif
-
